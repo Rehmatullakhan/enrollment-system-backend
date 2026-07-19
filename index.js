@@ -6,7 +6,9 @@ import { ObjectId } from 'mongodb';
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin:["https://enrollment-system-red.vercel.app", "https://localhost:5173"]
+}));
 
 let db;
 connection().then(database => {
